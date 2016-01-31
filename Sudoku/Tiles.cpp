@@ -37,13 +37,21 @@ std::list<int> Tile::getPos() {
 	return pos;
 }
 
-void Tile::remPos(int p) {
-	pos.remove(p);
+bool Tile::remPos(int p) {
+	for (std::list<int>::iterator i = pos.begin(); i != pos.end(); i++) {
+		if (*i == p) {
+			pos.remove(p);
+			return true;
+		}
+	}
+	return false;
 }
 
-void Tile::remPos(std::list<int> p) {
+bool Tile::remPos(std::list<int> p) {
+	bool dirty = false;
 	for (int i = 0; !p.empty(); i++) {
-		pos.remove(p.front());
+		dirty |= remPos(p.front());
 		p.pop_front();
 	}
+	return dirty;
 }

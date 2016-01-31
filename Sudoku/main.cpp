@@ -74,7 +74,7 @@ void testNine() {
 	//Test Nine()
 	cout << "Nine()\n";
 	Nine a;
-	
+
 	//Test Nine(std::list<Tile*>)
 	cout << "Nine(std::list<Tile>)\n";
 	list<Tile*> init;
@@ -149,7 +149,7 @@ void testNine() {
 		}
 		cout << "]" << endl;
 	}
-	
+
 	nums.remove(1);
 	nums.remove(3);
 	nums.remove(6);
@@ -267,7 +267,8 @@ void testBoard() {
 		cout << "]" << endl;
 	}
 	//Test solve()
-	cout << "Testing solve()\n";
+	cout << "Testing solve()\nInitial Board Print.\n";
+	a.print(0);
 	a.solve();
 	a.print(1);
 }

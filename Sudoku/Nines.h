@@ -16,8 +16,8 @@ public:
 	void setNine(std::list<Tile*> newVal);
 	void setNine(std::list<int> newVal);
 	void setTile(int index, int newVal);
-	void remTilePos(int index, int pos);
-	void remTilePos(int index, std::list<int> p);
-	void remPos(int newVal);
-	void remPos(std::list<int> p);
+	bool remTilePos(int index, int pos);
+	bool remTilePos(int index, std::list<int> p);
+	bool remPos(int newVal);
+	bool remPos(std::list<int> p);
 };

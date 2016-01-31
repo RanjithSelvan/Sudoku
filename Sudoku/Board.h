@@ -15,7 +15,10 @@ public:
 	void setBoard();
 	void print(int i);
 	bool solve();
-	bool simplify(Nine* nine);
+	bool simplify();
+	bool levelOne();
+	bool levelTwo();
+	bool levelThree();
 	bool solveOnes(Nine* nine, int index);
 	bool check();
 };

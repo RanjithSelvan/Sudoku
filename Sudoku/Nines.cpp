@@ -1,7 +1,7 @@
 #include "Nines.h"
 #include <list>
 
-Nine::Nine(){
+Nine::Nine() {
 	;
 }
 
@@ -11,10 +11,10 @@ Nine::Nine(std::list<Tile*> newTiles) {
 		val[i] = *iter++;
 	}
 }
-Nine::~Nine(){
+Nine::~Nine() {
 	;
 }
-Tile** Nine::getNine(){
+Tile** Nine::getNine() {
 	return val;
 }
 Tile* Nine::getTile(int index) {
@@ -33,7 +33,7 @@ void Nine::setNine(std::list<Tile*> newVal) {
 		val[i] = *iter++;
 	}
 }
-void Nine::setNine(std::list<int> newVal){
+void Nine::setNine(std::list<int> newVal) {
 	int size = newVal.size();
 	if (size != 9) {
 		return;
@@ -43,22 +43,26 @@ void Nine::setNine(std::list<int> newVal){
 		val[i]->setVal(*iter++);
 	}
 }
-void Nine::setTile(int index, int newVal){
+void Nine::setTile(int index, int newVal) {
 	val[index]->setVal(newVal);
 }
-void Nine::remTilePos(int index, int pos){
-	val[index]->remPos(pos);
+bool Nine::remTilePos(int index, int pos) {
+	return val[index]->remPos(pos);
 }
-void Nine::remTilePos(int index, std::list<int> p){
-	val[index]->remPos(p);
+bool Nine::remTilePos(int index, std::list<int> p) {
+	return val[index]->remPos(p);
 }
-void Nine::remPos(int newVal){
+bool Nine::remPos(int newVal) {
+	bool dirty = false;
 	for (int i = 0; i < 9; i++) {
-		val[i]->remPos(newVal);
+		dirty |= val[i]->remPos(newVal);
 	}
+	return dirty;
 }
-void Nine::remPos(std::list<int> p){
+bool Nine::remPos(std::list<int> p) {
+	bool dirty = false;
 	for (int i = 0; i < 9; i++) {
-		val[i]->remPos(p);
+		dirty |= val[i]->remPos(p);
 	}
+	return dirty;
 }

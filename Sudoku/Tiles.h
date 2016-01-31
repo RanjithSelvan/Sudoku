@@ -15,6 +15,6 @@ public:
 	int getVal();
 	void setVal(int newVal);
 	std::list<int> getPos();
-	void remPos(int p);
-	void remPos(std::list<int> p);
+	bool remPos(int p);
+	bool remPos(std::list<int> p);
 };

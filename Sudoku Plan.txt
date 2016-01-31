@@ -41,6 +41,7 @@ j/3 gives 0, 0, 0, 1, 1, 1, 2, 2, 2
 As a result it is possible to determine to which 3x3 a tile belongs
 
 Index of the 3x3 squares = f(i,j) = (j / 3) + (3 * (i / 3)) 
+Index of the 3x3 squares = f(j,i) = (i / 3) + (3 * (j / 3))
 *Note that the division is truncation*
 
    0 1 2   3 4 5   6 7 8
