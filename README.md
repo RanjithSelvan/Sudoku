@@ -1,2 +1,2 @@
 # Sudoku-C-
-Just a personal project to solve a sudoku board
+Just a personal project to solve a sudoku board. It is not completly working but it will solve simple boards. Those that only require one step solutions. If boards require 2 step or 3 step solutions, then it will not work. It should also be said that it is currently an inifinite loop system since I haven't gotten the full solution system complete. I might come back to this project but it is not a priority.
